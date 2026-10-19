@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional | Alan Ticona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="#inicio" aria-label="Ir al inicio"><strong>Alan Ticona</strong> | CV</a>
+
+        <button id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+            ☰ Menú
+        </button>
+
+        <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#github-repos">GitHub API</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle" aria-label="Cambiar entre modo claro y oscuro" role="switch" aria-checked="false">
+            🌙 Tema
+        </button>
+    </header>
+
+    <main id="inicio">
+        <section id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+            <h1 id="titulo-sobre-mi">Hola, soy Alan Nilz Ticona Ramos</h1>
+            <p>Estudiante de Ingeniería de Sistemas en la Universidad Católica Boliviana "San Pablo". Desarrollador Frontend enfocado en crear interfaces dinámicas, accesibles y de alto rendimiento.</p>
+        </section>
+
+        <aside aria-labelledby="titulo-habilidades">
+            <h2 id="titulo-habilidades">Datos y Habilidades</h2>
+            <ul>
+                <li><strong>Ubicación:</strong> La Paz, Bolivia</li>
+                <li><strong>Tecnologías:</strong> HTML5, CSS3 (Grid/Flexbox), JavaScript ES6+, Git & GitHub</li>
+                <li><strong>Idiomas:</strong> Español (Nativo), Inglés (Técnico)</li>
+            </ul>
+        </aside>
+
+        <section id="proyectos" aria-labelledby="titulo-proyectos">
+            <h2 id="titulo-proyectos">Mis Proyectos y Habilidades</h2>
+            <label for="buscador-proyectos">Filtrar por nombre o tecnología:</label>
+            <input type="search" id="buscador-proyectos" placeholder="Ej. JavaScript, Web, API..." aria-label="Buscar proyectos en tiempo real">
+
+            <section id="contenedor-proyectos" aria-live="polite">
+                <!-- Se llena dinámicamente con .filter() y .map() en app.js -->
+            </section>
+        </section>
+
+        <section id="github-repos" aria-labelledby="titulo-api">
+            <h2 id="titulo-api">Repositorios en GitHub (Integración REST API)</h2>
+            <p id="estado-api" role="status" aria-live="polite">Iniciando conexión...</p>
+            <section id="contenedor-api">
+                <!-- Se insertan los datos de Fetch API -->
+            </section>
+        </section>
+
+        <section id="contacto" aria-labelledby="titulo-contacto">
+            <h2 id="titulo-contacto">Formulario de Contacto</h2>
+            <form id="formulario-contacto" novalidate aria-label="Formulario de contacto profesional">
+                <fieldset>
+                    <legend>Envíame un mensaje</legend>
+
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" aria-required="true">
+                    <small id="error-nombre" role="alert"></small>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                    <small id="error-email" role="alert"></small>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required minlength="10" aria-required="true"></textarea>
+                    <small id="error-mensaje" role="alert"></small>
+
+                    <button type="submit">Enviar Mensaje</button>
+                    <p id="mensaje-exito" role="status" aria-live="polite"></p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alan Nilz Ticona Ramos - Tecnologías Web I (SIS-214) - UCB</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
