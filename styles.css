@@ -1,0 +1,224 @@
+/* 1. Tokens de Diseño y Reglas de Reset Universal Obligatorias */
+:root {
+  --primary-color: #0056b3;
+  --secondary-color: #17a2b8;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --font-family-base: 'Segoe UI', system-ui, sans-serif;
+  --spacing-unit: 1rem;
+  --card-bg: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+/* Variables para Dark Mode */
+[data-theme="dark"] {
+  --primary-color: #4da3ff;
+  --secondary-color: #3dd5f3;
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Estilos Base Mobile-First (< 768px por defecto) */
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Flexbox para la barra superior */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-unit);
+  background-color: var(--card-bg);
+  border-bottom: 2px solid var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Menú Hamburguesa oculto por defecto en móvil */
+nav {
+  width: 100%;
+  display: none;
+  margin-top: var(--spacing-unit);
+}
+
+nav.activo {
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+/* CSS Grid para el esquema general */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--spacing-unit) * 1.5);
+  padding: var(--spacing-unit);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section, aside {
+  background-color: var(--card-bg);
+  padding: var(--spacing-unit);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+h1, h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+aside ul {
+  list-style-position: inside;
+}
+
+/* Contenedores Grid para tarjetas de proyectos y API */
+#contenedor-proyectos, #contenedor-api {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-unit);
+  margin-top: var(--spacing-unit);
+  border: none;
+  padding: 0;
+}
+
+article {
+  background-color: var(--bg-color);
+  padding: var(--spacing-unit);
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 4px;
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Formulario con Flexbox */
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+small {
+  color: #dc3545;
+  min-height: 1.2rem;
+}
+
+.exito-texto {
+  color: #198754;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing-unit);
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 3. Media Query para Tablet: 768px a 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    width: auto;
+    margin-top: 0;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: var(--spacing-unit);
+  }
+
+  main {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #proyectos, #github-repos, #contacto {
+    grid-column: 1 / -1;
+  }
+
+  #contenedor-proyectos, #contenedor-api {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4. Media Query para Escritorio: > 1024px */
+@media (min-width: 1025px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    width: auto;
+    margin-top: 0;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  main {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  #proyectos, #github-repos, #contacto {
+    grid-column: 1 / -1;
+  }
+
+  #contenedor-proyectos, #contenedor-api {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
