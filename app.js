@@ -37,6 +37,7 @@ menuToggleBtn.addEventListener('click', () => {
     mainNav.classList.toggle('activo');
     menuToggleBtn.setAttribute('aria-expanded', String(nuevoEstado));
     menuToggleBtn.textContent = nuevoEstado ? '✕ Cerrar' : '☰ Menú';
+    menuToggleBtn.setAttribute('aria-label', nuevoEstado ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
 });
 
 
@@ -132,7 +133,7 @@ const estadoApi = document.getElementById('estado-api');
 const contenedorApi = document.getElementById('contenedor-api');
 
 // Nota: Puedes cambiar 'octocat' por tu propio nombre de usuario de GitHub
-const GITHUB_USER = 'octocat';
+const GITHUB_USER = 'MainTrainA';
 
 const obtenerRepositoriosGitHub = async (usuario) => {
     // Estado 1: Cargando (loading)
