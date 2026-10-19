@@ -1,33 +1,33 @@
-# Portafolio Profesional Interactivo - SIS-214
+# Portafolio de Alan Ticona
 
-Proyecto práctico de la Unidad II (*Desarrollo de Interfaces Dinámicas con JavaScript*) para la asignatura **Tecnologías Web I (SIS-214)** de la **Universidad Católica Boliviana "San Pablo"**.
+Hola, soy Alan, estudiante de Ingeniería de Sistemas en la Universidad Católica Boliviana. Este sitio es un trabajo práctico para la materia Tecnologías Web I. Lo hice para practicar HTML, CSS y JavaScript con una página que también se pueda usar desde el celular.
 
-## 🏗️ Arquitectura de la Solución
-La aplicación sigue una arquitectura cliente modular dividida en tres capas:
-1. **Capa Estructural (`index.html`):** Maquetación 100% semántica (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`) enriquecida con atributos de accesibilidad **WAI-ARIA** (`aria-expanded`, `aria-live`, `aria-label`, `role`).
-2. **Capa de Presentación (`styles.css`):** Diseño adaptativo **Mobile-First** gobernado por Custom Properties en `:root`, esquema bidimensional con **CSS Grid** y alineación unidimensional con **Flexbox**, estructurado en 3 umbrales (`<768px`, `768px-1024px`, `>1024px`).
-3. **Capa Lógica (`app.js`):** Escrita en JavaScript ES6+ que gestiona el estado del tema en `localStorage` (`JSON.stringify` / `JSON.parse`), menú móvil accesible, filtrado inmutable con `.filter().map()`, validación de formulario en tiempo real con `event.preventDefault()` y consumo asíncrono de la API REST de GitHub mediante `fetch`, `async/await` y manejo de estados HTTP en bloques `try...catch`.
+## Qué incluye
 
-## 🛠️ Tecnologías Utilizadas
-- **HTML5 Semántico & WAI-ARIA (WCAG)**
-- **CSS3** (Custom Properties, Flexbox, CSS Grid, Media Queries)
-- **JavaScript Moderno (ES6+)** (DOM API, Fetch API, Web Storage API)
-- **Git & GitHub Pages**
+- Una sección con información personal y algunos proyectos de ejemplo.
+- Un menú que se adapta a pantallas pequeñas y medianas.
+- Un buscador para filtrar los proyectos.
+- Un botón para cambiar entre tema claro y oscuro; la opción se guarda en el navegador.
+- Un formulario que valida los campos y muestra una confirmación. No envía correos ni guarda mensajes en un servidor.
+- Una lista de mis repositorios, cargada desde la API pública de GitHub.
 
-## 🚀 Instrucciones de Ejecución Local
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/MainTrainA/SIS214_ExamenPractico2_TiconaAlan.git
-   cd SIS214_ExamenPractico2_TiconaAlan
-   ```
-2. Abrir `index.html` en un navegador. No se requiere instalar dependencias ni ejecutar un servidor para probar la aplicación localmente.
+## Archivos
 
-## Publicación en GitHub Pages
-1. En GitHub, abrir **Settings > Pages** del repositorio.
-2. En **Build and deployment**, elegir **Deploy from a branch**.
-3. Seleccionar la rama `main` y la carpeta `/(root)`, luego guardar.
-4. Esperar a que finalice la publicación. La URL del sitio es:
+- `index.html`: contenido y estructura de la página.
+- `styles.css`: colores, distribución y estilos para distintos tamaños de pantalla.
+- `app.js`: menú, tema, filtro, formulario y consulta a GitHub.
 
-   https://maintraina.github.io/SIS214_ExamenPractico2_TiconaAlan/
+## Cómo abrirlo
 
-La sección de repositorios obtiene datos públicos desde la API REST de GitHub. Para mostrar los repositorios de otra cuenta, cambiar el valor de `GITHUB_USER` en `app.js`.
+Clona el repositorio y abre `index.html` en tu navegador. No hace falta instalar paquetes. Para cargar la lista de repositorios necesitas conexión a internet.
+
+```bash
+git clone https://github.com/MainTrainA/SIS214_ExamenPractico2_TiconaAlan.git
+cd SIS214_ExamenPractico2_TiconaAlan
+```
+
+## Enlaces
+
+- Repositorio: https://github.com/MainTrainA/SIS214_ExamenPractico2_TiconaAlan
+- Sitio publicado: https://maintraina.github.io/SIS214_ExamenPractico2_TiconaAlan/
+- Mi perfil de GitHub: https://github.com/MainTrainA
